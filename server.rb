@@ -11,5 +11,10 @@ require_relative 'models/frame'
 get "/" do
 end
 
+#editing screen to add new frame
 get "/edit/add" do
+end
+
+#submitted screen for validation/saving
+post "/edit/add" do
 end
