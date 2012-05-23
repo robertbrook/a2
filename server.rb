@@ -15,6 +15,13 @@ end
 get "/edit/add" do
 end
 
-#submitted screen for validation/saving
+#submitted frame for validation/saving
 post "/edit/add" do
+  # check everything's ok...
+  
+  # ...it is? Great, save the object
+  #frame = Frame.new
+  #frame.timestamp = 
+  #frame.text =
+  #frame.save
 end
