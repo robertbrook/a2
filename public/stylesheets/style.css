@@ -1,0 +1,7 @@
+body{font-family: Verdana,Arial,sans-serif;}
+#frameholder{border: 4px solid black; color: white; background-color: #33CC33; font-weight: bold; font-size: 1.2em; width: 450px; padding: 0 0.6em}
+#frameholder h3 {text-align: center;}
+#frameholder .content  {min-height: 220px; text-align: center;}
+#frameholder #footer {position: relative; margin-bottom: 0.4em;}
+#frameholder #ts_left {text-align: left; display: inline;}
+#frameholder #ts_right {float: right; margin: -1.2em 0 0 0;}

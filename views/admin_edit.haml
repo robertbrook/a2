@@ -1,0 +1,15 @@
+%h2
+  << Data Entry Page Title >>
+
+%form{:method => "post"}
+  %p
+    %label{:for => "title"} Title
+    %input{:type => "text", :id => "title", :name => "title", :size => "50", :value => title_text }
+  %p 
+    %textarea{:name => "text", :id => "text", :cols => "80", :rows => "14"}
+      =frame_text
+  %p
+    %label{:for => "ts"} Timestamp
+    %input{:type => "text", :id => "ts", :name => "ts", :size => 30, :value => timestamp_text }
+  %p
+    %input{:type => "submit", :value => "save"}

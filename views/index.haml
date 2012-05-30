@@ -1,0 +1,11 @@
+#frameholder
+  %h3
+    =@frame.title 
+  %p.content
+    =@frame.text.gsub("\r\n", "<br>")
+  #footer
+    #ts_left
+      
+      
+    #ts_right
+      =@frame.timestamp.strftime("%H:%M")

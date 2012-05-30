@@ -1,0 +1,8 @@
+%p
+  %a{:href => "/admin/new"} Add new frame
+
+%ul
+  - @frames.each do |frame|
+    %li
+      %a{:href => "/admin/#{frame.id}"}
+        ="[#{frame.timestamp.to_s.gsub(" UTC", "")}] #{frame.title}"
