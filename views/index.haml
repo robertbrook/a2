@@ -1,3 +1,6 @@
+- if @error
+  %p.warn= @error
+
 #frameholder
   %h3
     =@frame.title 
@@ -8,3 +11,8 @@
       
     #ts_right
       =@frame.timestamp.strftime("%H:%M")
+      
+      
+%nav
+  %a{:href => "?prev=#{@frame.timestamp}&dir=back"} << Earlier
+  %a{:href => "?prev=#{@frame.timestamp}&dir=fwd"} Later >>

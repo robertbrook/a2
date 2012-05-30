@@ -5,3 +5,4 @@ body{font-family: Verdana,Arial,sans-serif;}
 #frameholder #footer {position: relative; padding-bottom: 0.4em; min-height: 1em;}
 #frameholder #ts_left {text-align: left; display: inline;}
 #frameholder #ts_right {position: absolute; right: 0; top: 0;}
+.warn{color: crimson;}

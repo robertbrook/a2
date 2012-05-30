@@ -41,7 +41,26 @@ helpers do
 end
 
 get "/" do
-  @frame = Frame.last
+  unless params[:prev]
+    @frame = Frame.last(:order => :timestamp.asc)
+  else
+    if params[:dir] == "back"
+      dir = "earlier"
+      @frame = Frame.where(:timestamp => {:$lt => params[:prev].to_time}).limit(1).sort(:timestamp.desc).first
+    else
+      dir = "later"
+      @frame = Frame.where(:timestamp => {:$gt => params[:prev].to_time}).limit(1).sort(:timestamp.asc).first
+    end
+  end
+  unless @frame
+    @frame = Frame.where(:timestamp => params[:prev].to_time).first
+    if params[:dir]
+      @error = "Sorry, could not find the #{dir} frame you requested. Here's the last one you saw"
+    else
+      @error = "Sorry, something seems to have gone wrong, returning to the start"
+      @frame = Frame.last(:order => :timestamp.asc)
+    end
+  end
   haml :index
 end
 
