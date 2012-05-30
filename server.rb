@@ -66,7 +66,7 @@ end
 
 #admin home screen
 get "/admin/?" do
-  @frames = Frame.all
+  @frames = Frame.all(:order => :timestamp.desc)
   haml :admin
 end
 
