@@ -10,33 +10,15 @@ require_relative 'models/frame'
 
 helpers do
   def title_text
-    if params[:title]
-      params[:title]
-    elsif @frame
-      @frame.title
-    else
-      ""
-    end
+    params[:title] || (@frame ? @frame.title : "")
   end
   
   def frame_text
-    if params[:text]
-      params[:text]
-    elsif @frame
-      @frame.text
-    else
-      ""
-    end
+    params[:text] || (@frame ? @frame.text : "")
   end
   
   def timestamp_text
-    if params[:ts]
-      params[:ts]
-    elsif @frame
-      @frame.timestamp
-    else
-      Time.now()
-    end
+    params[:ts] || (@frame ? @frame.timestamp : Time.now())
   end
 end
 
